@@ -1,0 +1,5 @@
+AllCops:
+  Exclude:
+    - 'db/migrate/20210920100733_create_active_storage_tables.active_storage.rb'
+    - 'bin/*'
+    - 'db/schema.rb'

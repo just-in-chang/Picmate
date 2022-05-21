@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  # host: db # uncomment if using docker
+
+development:
+  <<: *default
+  database: picmate_api_development
+  username: postgres
+  password: postgres
+
+test:
+  <<: *default
+  database: picmate_api_test
+  username: postgres
+  password: postgres
+
+production:
+  <<: *default
+  database: picmate_api_production
+  username: picmate_api
+  password: <%= ENV['PICMATE_API_DATABASE_PASSWORD'] %>
